@@ -1,0 +1,81 @@
+{
+  "name": "zai-commit",
+  "displayName": "Z.AI Commit",
+  "description": "AI-powered conventional commit message generation using Z.AI GLM-4.7-flash",
+  "version": "1.0.0",
+  "author": "Prokhor Orlov",
+  "publisher": "prokhor-orlov",
+  "license": "MIT",
+  "icon": "icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/prokhororlov/zai-commit"
+  },
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "SCM Providers"
+  ],
+  "main": "./out/extension.js",
+  "activationEvents": [
+    "workspaceContains:.git"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "zai-tools.generateCommit",
+        "title": "Generate Commit Message (GLM)",
+        "icon": {
+          "light": "icons/zai-light.svg",
+          "dark": "icons/zai-dark.svg"
+        },
+        "category": "Z.AI"
+      },
+      {
+        "command": "zai-tools.stopGeneration",
+        "title": "Stop GLM Generation",
+        "icon": {
+          "light": "icons/stop-light.svg",
+          "dark": "icons/stop-dark.svg"
+        },
+        "category": "Z.AI"
+      },
+      {
+        "command": "zai-tools.setApiKey",
+        "title": "Set Z.AI API Key",
+        "category": "Z.AI"
+      },
+      {
+        "command": "zai-tools.clearApiKey",
+        "title": "Clear Z.AI API Key",
+        "category": "Z.AI"
+      }
+    ],
+    "menus": {
+      "scm/title": [
+        {
+          "command": "zai-tools.generateCommit",
+          "group": "navigation@100",
+          "when": "scmProvider == git && !zaiGenerating"
+        },
+        {
+          "command": "zai-tools.stopGeneration",
+          "group": "navigation@100",
+          "when": "scmProvider == git && zaiGenerating"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/node": "^18.0.0",
+    "@types/vscode": "^1.85.0",
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {}
+}
