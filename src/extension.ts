@@ -171,13 +171,13 @@ export function activate(context: vscode.ExtensionContext) {
       }
     }),
 
-    vscode.commands.registerCommand('zai-tools.stopGeneration', () => {
+    vscode.commands.registerCommand('zai-tools.stopGeneration', async () => {
       currentApi?.abort();
       stopAnimation?.();
       stopAnimation = null;
       setGenerating(false);
       currentApi = null;
-      setCommitMessage('');
+      await setCommitMessage('');
     }),
   );
 

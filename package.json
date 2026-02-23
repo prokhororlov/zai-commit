@@ -17,6 +17,7 @@
   "categories": [
     "SCM Providers"
   ],
+  "keywords": ["git", "commit", "ai", "glm", "conventional-commits", "scm", "z.ai"],
   "main": "./out/extension.js",
   "activationEvents": [
     "workspaceContains:.git"
