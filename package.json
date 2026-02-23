@@ -2,7 +2,7 @@
   "name": "zai-commit",
   "displayName": "Z.AI Commit",
   "description": "AI-powered conventional commit message generation using Z.AI GLM-4.7-flash",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "author": "Prokhor Orlov",
   "publisher": "prokhor-orlov",
   "license": "MIT",
@@ -17,7 +17,15 @@
   "categories": [
     "SCM Providers"
   ],
-  "keywords": ["git", "commit", "ai", "glm", "conventional-commits", "scm", "z.ai"],
+  "keywords": [
+    "git",
+    "commit",
+    "ai",
+    "glm",
+    "conventional-commits",
+    "scm",
+    "z.ai"
+  ],
   "main": "./out/extension.js",
   "activationEvents": [
     "workspaceContains:.git"
